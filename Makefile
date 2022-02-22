@@ -10,7 +10,7 @@ endif
 
 # Unknown what actual compiler version it uses
 COMPILER_VERSION ?= 2.6
-LINKER_VERSION ?= 1.0
+LINKER_VERSION ?= 2.7
 
 VERBOSE ?= 1
 
@@ -90,16 +90,18 @@ REL_LCF := lcf/partial.lcf
 # main dol sources
 SOURCES := \
     asm/main/init.s \
-    asm/main/text.s \
     asm/main/extab.s \
+    asm/main/text.s \
     asm/main/ctors.s \
     asm/main/dtors.s \
     asm/main/rodata.s \
     asm/main/data.s \
+    asm/main/bss.s \
     asm/main/sdata.s \
     asm/main/sbss.s \
     asm/main/sdata2.s \
-    asm/main/bss.s \
+    asm/main/sbss2.s \
+
 
 O_FILES := $(addsuffix .o,$(basename $(SOURCES)))
 ALL_O_FILES := $(O_FILES)
